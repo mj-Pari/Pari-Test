@@ -16,6 +16,7 @@ class Customer extends Model
         'phone',
         'company',
         'status',
+        'priority',
         'notes',
     ];
 }

@@ -39,6 +39,15 @@ class CustomerForm
                     ->default('lead')
                     ->required(),
 
+                Select::make('priority')
+                    ->options([
+                        'low' => 'Low',
+                        'medium' => 'Medium',
+                        'high' => 'High',
+                    ])
+                    ->default('medium')
+                    ->required(),
+
                 Textarea::make('notes')
                     ->columnSpanFull(),
             ]);

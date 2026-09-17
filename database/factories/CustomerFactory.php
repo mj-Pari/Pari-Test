@@ -23,6 +23,7 @@ class CustomerFactory extends Factory
             'phone' => fake()->phoneNumber(),
             'company' => fake()->company(),
             'status' => fake()->randomElement(['lead', 'active', 'inactive']),
+            'priority' => fake()->randomElement(['low', 'medium', 'high']),
             'notes' => fake()->optional()->sentence(),
         ];
     }
