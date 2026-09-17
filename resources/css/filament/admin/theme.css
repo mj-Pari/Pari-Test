@@ -1,0 +1,90 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+/*
+|--------------------------------------------------------------------------
+| AI4ALL with MJ — custom brand theme
+|--------------------------------------------------------------------------
+| Pitch black surfaces, blood red accents, metallic gold trim.
+| Colors sampled from ai4allwithmj.com:
+|   pitch black   #050403
+|   blood red     #CF1724
+|   metallic gold #E4C176
+|   cream text    #F3EFE6
+*/
+
+:root,
+.dark {
+    --gold-trim: #E4C176;
+    --blood-red: #CF1724;
+    --pitch-black: #050403;
+    --panel-black: #0D0B09; /* very slightly lifted, so cards read against the page */
+}
+
+/* Force pure black page background */
+body,
+.fi-body {
+    background-color: var(--pitch-black) !important;
+}
+
+/* Sidebar: black with a gold right-edge trim */
+.fi-sidebar {
+    background-color: var(--pitch-black) !important;
+    border-inline-end: 1px solid color-mix(in srgb, var(--gold-trim) 35%, transparent) !important;
+}
+
+.fi-sidebar-header {
+    border-bottom: 1px solid color-mix(in srgb, var(--gold-trim) 35%, transparent) !important;
+}
+
+/* Topbar: black with a gold bottom trim line */
+.fi-topbar {
+    background-color: var(--pitch-black) !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--gold-trim) 35%, transparent) !important;
+}
+
+/* Active / hovered sidebar nav item gets a gold left trim */
+.fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+    border-inline-start: 3px solid var(--gold-trim) !important;
+    background-color: color-mix(in srgb, var(--blood-red) 16%, transparent) !important;
+}
+
+.fi-sidebar-item-btn:hover {
+    background-color: color-mix(in srgb, var(--gold-trim) 8%, transparent) !important;
+}
+
+/* Cards / sections: near-black with a real gold hairline border */
+.fi-section,
+.fi-wi-widget {
+    background-color: var(--panel-black) !important;
+    border: 1px solid color-mix(in srgb, var(--gold-trim) 30%, transparent) !important;
+}
+
+/* Brand name styling to match the site's gold wordmark */
+.fi-logo {
+    color: var(--gold-trim) !important;
+    letter-spacing: 0.02em;
+    font-weight: 700;
+}
+
+/* Primary buttons: blood red fill, gold hairline */
+.fi-btn.fi-color-primary {
+    border: 1px solid color-mix(in srgb, var(--gold-trim) 55%, transparent) !important;
+}
+
+/* Focus rings in gold instead of default (Filament rings the input WRAPPER, not the input) */
+.fi-input-wrp:focus-within {
+    --tw-ring-color: var(--gold-trim) !important;
+    box-shadow: 0 0 0 1px var(--gold-trim) !important;
+}
+
+/* Table: gold hairline under the header row */
+.fi-ta-header-cell {
+    border-bottom: 1px solid color-mix(in srgb, var(--gold-trim) 30%, transparent) !important;
+}
+
+.fi-ta-table {
+    background-color: var(--panel-black) !important;
+}

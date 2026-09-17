@@ -27,9 +27,16 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->viteTheme('resources/css/filament/admin/theme.css')
             ->login()
+            ->brandName('AI4ALL with MJ — Customers')
+            ->darkMode(true, isForced: true)
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::hex('#CF1724'), // blood red
+                'gold' => Color::hex('#E4C176'), // metallic gold trim
+                'danger' => Color::Red,
+                'success' => Color::Emerald,
+                'warning' => Color::hex('#E4C176'),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
